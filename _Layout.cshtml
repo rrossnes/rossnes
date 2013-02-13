@@ -1,0 +1,45 @@
+﻿@{
+    String header = "~/_Menu.cshtml";
+    String footer = "~/_Footer.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1">
+        <meta name="description" content="A personal collection of consulting know-how">
+        <meta name="author" content="Roald S. Rossnes">
+        <meta name="keywords" content="consulting, planning, making, sharing, projects, ideas">
+
+        <link href="public/css/modern.css" rel="stylesheet">
+        <link href="public/css/modern-responsive.css" rel="stylesheet">
+        <link href="public/css/site.css" rel="stylesheet" type="text/css">
+        <link href="public/js/google-code-prettify/prettify.css" rel="stylesheet" type="text/css">
+
+        <script type="text/javascript" src="public/js/assets/jquery-1.9.0.min.js"></script>
+        <script type="text/javascript" src="public/js/assets/jquery.mousewheel.min.js"></script>
+
+        <script type="text/javascript" src="public/js/modern/dropdown.js"></script>
+        <script type="text/javascript" src="public/js/modern/accordion.js"></script>
+        <script type="text/javascript" src="public/js/modern/buttonset.js"></script>
+        <script type="text/javascript" src="public/js/modern/carousel.js"></script>
+        <script type="text/javascript" src="public/js/modern/input-control.js"></script>
+        <script type="text/javascript" src="public/js/modern/pagecontrol.js"></script>
+        <script type="text/javascript" src="public/js/modern/rating.js"></script>
+        <script type="text/javascript" src="public/js/modern/slider.js"></script>
+        <script type="text/javascript" src="public/js/modern/tile-slider.js"></script>
+        <script type="text/javascript" src="public/js/modern/tile-drag.js"></script>
+
+        <title>rossnes.org - a consultant's collection</title>
+    </head>
+    
+    <body class="modern-ui" onload="prettyPrint()">
+
+        @RenderPage(header)
+        @RenderBody()
+        @RenderPage(footer)
+      
+    </body>
+</html>
