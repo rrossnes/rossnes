@@ -1,0 +1,96 @@
+﻿@{
+    Layout = "~/_Layout.cshtml";
+
+    var kjonn = "";
+    var dag = "";
+    var mnd = "";
+    var aar = "";
+    var result = "";
+
+    if(IsPost){
+        kjonn = Request.Form["kjonn"];
+        dag = Request.Form["dag"];
+        mnd = Request.Form["mnd"];
+        aar = Request.Form["aar"];
+
+        result = _VerktoyFunctions.PersonNummer(dag,mnd,aar,kjonn);
+    }
+}
+
+<div class="page secondary">
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1>Personnummer<small>Testverktøy for generering av personnummer</small></h1>
+            <a href="/" class="back-button big page-back"></a>
+        </div>
+    </div>
+ 
+    <div class="page-region">
+        <div class="page-region-content">
+
+            <p class ="body-text">
+                Under finner dere et verktøy for å generere norske personnummer. Personnummer kan genereres tilfeldig eller ut fra valgte kritterier som
+                kjønn, fødselsdato eller alder.
+            </p>
+                
+            <form method="post">
+                <div class="input-control select" >
+                    <select name="kjonn" value="@Request.Form["kjonn"]">
+                        <option value="Mann">Mann</option>
+                        <option value="Kvinne">Kvinne</option>
+                    </select>
+                </div>                <div class="input-control select">
+                    <select name="dag" value="@Request.Form["dag"]">
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                    </select>
+                </div>                <div class="input-control select">
+                    <select name="mnd" value="@Request.Form["mnd"]">
+                        <option value="01">Januar</option>
+                        <option value="02">Februar</option>
+                    </select>
+                </div>                <div class="input-control select">
+                    <select name="aar" value="@Request.Form["aar"]">
+                        <option value="2012">2012</option>
+                        <option value="2011">2011</option>
+                    </select>
+                </div>                <input type="submit" value="Submit"/>
+                <input type="reset"  value="Reset"/>            </form>
+                
+            <p class ="body-text">
+                Første gang siden lastes er tabellen under fyllt med tilfeldige personnummer. For å endre dette må man benytte skjemaet over for å generere nye. Dersom 
+                man trenger flere tilfeldige personnummer kan man enten laste siden på nytt eller trykke på "Generer Tilfeldig" i skjemaet over.
+            </p>
+                
+            <table class="striped">
+                <thead>
+                    <tr>
+                        <th>Personnummer</th>
+                        <th class="right">Fornavn</th>
+                        <th class="right">Etternavn</th>
+                        <th class="right">Adresse</th>
+                        <th class="right">Postnummer</th>
+                        <th class="right">Poststed</th>
+                        <th class="right"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>010191 56321</td><td class="right">Ola</td><td class="right">Nordmann</td><td class="right">Testveien 15</td><td class="right">0001</td><td class="right">Oslo</td><td class="right"></td></tr>
+                    <tr><td>010191 56321</td><td class="right">Ola</td><td class="right">Nordmann</td><td class="right">Testveien 15</td><td class="right">0001</td><td class="right">Oslo</td><td class="right"></td></tr>
+                    <tr><td>010191 56321</td><td class="right">Ola</td><td class="right">Nordmann</td><td class="right">Testveien 15</td><td class="right">0001</td><td class="right">Oslo</td><td class="right"></td></tr>
+                    <tr><td>010191 56321</td><td class="right">Ola</td><td class="right">Nordmann</td><td class="right">Testveien 15</td><td class="right">0001</td><td class="right">Oslo</td><td class="right"></td></tr>
+                    <tr><td>010191 56321</td><td class="right">Ola</td><td class="right">Nordmann</td><td class="right">Testveien 15</td><td class="right">0001</td><td class="right">Oslo</td><td class="right"></td></tr>
+                    <tr><td>010191 56321</td><td class="right">Ola</td><td class="right">Nordmann</td><td class="right">Testveien 15</td><td class="right">0001</td><td class="right">Oslo</td><td class="right"></td></tr>
+                    <tr><td>010191 56321</td><td class="right">Ola</td><td class="right">Nordmann</td><td class="right">Testveien 15</td><td class="right">0001</td><td class="right">Oslo</td><td class="right"></td></tr>
+                    <tr><td>010191 56321</td><td class="right">Ola</td><td class="right">Nordmann</td><td class="right">Testveien 15</td><td class="right">0001</td><td class="right">Oslo</td><td class="right"></td></tr>    
+                    <tr><td>010191 56321</td><td class="right">Ola</td><td class="right">Nordmann</td><td class="right">Testveien 15</td><td class="right">0001</td><td class="right">Oslo</td><td class="right"></td></tr>
+                </tbody>
+                <tfoot></tfoot>
+            </table>
+            @if(IsPost){
+                <p>Du kjørte personnummergenerator sist : @DateTime.Now, med følgende parametre : @kjonn, @dag, @mnd, @aar</p>
+            }
+
+        </div>
+    </div>
+</div>
