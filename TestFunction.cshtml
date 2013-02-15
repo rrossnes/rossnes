@@ -1,0 +1,24 @@
+﻿@{
+    var myRadius=10.0;
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+    </head>
+    <body>
+                    
+        <p>
+            The area of a circle of radius 
+            @myRadius  =   @Calculations.CircleArea(myRadius).ToString()
+        </p>
+        
+                <p>
+            Her er et personnummer : @Calculations.PersonNummer(11,02,91,"m");
+        </p>  
+        
+    </body>
+</html>
