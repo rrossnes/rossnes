@@ -88,7 +88,11 @@
                 <tfoot></tfoot>
             </table>
             @if(IsPost){
-                <p>Du kjørte personnummergenerator sist : @DateTime.Now, med følgende parametre : @kjonn, @dag, @mnd, @aar</p>
+                <p>Du kjørte personnummergenerator sist : @DateTime.Now, med følgende parametre:<br>
+                   @kjonn, @dag, @mnd, @aar.<br><br>
+                   Dette resulterte i følgende personnummer:<br>
+                   @result
+                </p>
             }
 
         </div>

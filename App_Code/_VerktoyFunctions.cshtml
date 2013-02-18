@@ -4,53 +4,33 @@ public static String PersonNummer(String dag, String mnd, String aar, String kjo
     //todo
     int individ;
     int p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11;
-    int v1a, v2a, v3a, v4a, v5a, v6a, v7a, v8a, v9a, v10a, v11a;
-
-    //vekting
-    v1a = 3;
-    v2a = 7;
-    v3a = 6;
-    v4a = 1;
-    v5a = 8;
-    v6a = 9;
-    v7a = 4;
-    v8a = 5;
-    v9a = 2;
-    v10a = 1;
-    v11a = 1;
-
-    v1b = 5;
-    v2b = 4;
-    v3b = 3;
-    v4b = 2;
-    v5b = 7;
-    v6b = 6;
-    v7b = 5;
-    v8b = 4;
-    v9b = 3;
-    v10b = 2;
-    v11b = 1;
-
 
     //dato posisjoner
-    pos1 = dag.Substring(0,1).AsInt();
-    pos2 = dag.Substring(1,1).AsInt();
-    pos3 = mnd.Substring(0,1).AsInt();
-    pos4 = mnd.Substring(1,1).AsInt();
-    pos5 = aar.Substring(0,1).AsInt();
-    pos6 = aar.Substring(1,1).AsInt();
+    p1 = dag.Substring(0,1).AsInt();
+    p2 = dag.Substring(1,1).AsInt();
+    p3 = mnd.Substring(0,1).AsInt();
+    p4 = mnd.Substring(1,1).AsInt();
+    p5 = aar.Substring(2,1).AsInt();
+    p6 = aar.Substring(3,1).AsInt();
 
-    //individ posisjoner
-    if(kjonn = "Mann"){
-        //generere individnummer mellom 0 og 999
-        var random = new Random(1000);
-        individ = random
-    }
+    //individ posisjoner - generere individnummer mellom 0 og 999
+    var random = new Random(1000);
+    p7 = random.ToString().AsInt();
+    random.Next();
+    p8 = random.ToString().AsInt();
+    random.Next();
+    p9 = random.ToString().AsInt();
 
-    //kontrollsiffer posisjoner
+    //beregning av kontrollsiffer
+
+    p10 = (11 - ((3 * p1) + (7 * p2) + (6 * p3) + (1 * p4) + (8 * p5) + (9 * p6) + (4 * p7) + (5 * p8) + (2 * p9))%11);
+    p11 = (11 - ((5 * d1 + 4 * d2 + 3 * m1 + 2 * m2 + 7 * å1 + 6 * å2 + 5 * i1 + 4 * i2 + 3 * i3 + 2 * k1)%11).
+
+    //verifisering av personnummer
 
     //dummy return
-    String result = String.Concat(dag,mnd,aar,kjonn);
+    //String result = String.Concat(dag,mnd,aar,kjonn);
+    String result = String.Concat(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11);
     return result;
     
 }
